@@ -1,0 +1,66 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #05070d; overflow-x: hidden; }
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: url("../assets/hall-bg.jpg") center / cover no-repeat;
+  perspective: 1200px;
+}
+
+.rune {
+  position: absolute;
+  left: 50%;
+  top: 73%;
+  width: 45vmin;
+  translate: -50% -47%;
+  transform: rotateX(70deg);
+  opacity: 0.9;
+  animation: spin 40s linear infinite, pulse 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from { transform: rotateX(70deg) rotateZ(0deg); }
+  to   { transform: rotateX(70deg) rotateZ(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { filter: drop-shadow(0 0 8px #4fc3ff); }
+  50%      { filter: drop-shadow(0 0 28px #4fc3ff); }
+}
+
+.wizard {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  height: 20vh;
+  translate: -50% -100%;
+}
+
+.shockwave {
+  position: absolute;
+  left: 50%;
+  top: 72%;
+  width: 30vmin;
+  height: 30vmin;
+  translate: -50% -50%;
+  border: 3px solid #4fc3ff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #4fc3ff, inset 0 0 20px #4fc3ff;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flash {
+  position: absolute;
+  left: 50%;
+  top: 72%;
+  width: 60vmin;
+  height: 30vmin;
+  translate: -50% -50%;
+  background: radial-gradient(ellipse, rgba(120, 210, 255, 0.9), transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+}
